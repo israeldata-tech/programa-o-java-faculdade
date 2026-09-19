@@ -4,15 +4,15 @@ public class MaiorMenor {
         Scanner l = new Scanner(System.in);
         System.out.println("digite quantos números quer digitar: ");
         int n = l.nextInt();
-        double maior;
-        double menor;
+        double maior = 0;
+        double menor = 0;
         for(int i=0;i<n;i++){
-            System.out.println("digite o numero"+ i+1+": ");
+            System.out.println("digite o numero "+ (i+1)+": ");
             double d = l.nextDouble();
-            if(i==1){
+            if(i==0){
             maior = d;
             menor = d;
-            }
+            } else{
             if(d > maior){
                 maior = d;
             }
@@ -20,5 +20,8 @@ public class MaiorMenor {
                 menor = d;
             }
         }
+        }
+        System.out.println("o maior número digitado é "+ maior+ " o menor número digitado é "+ menor);
+        l.close();
     }
 }
