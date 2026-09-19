@@ -15,8 +15,9 @@ public class analistap {
         for(int i=0;i<q;i++){
             System.out.println("digite o nome da pessoa "+(i+1)+": ");
             String nome = l.nextLine();
-            System.out
-            System.out.println("digite a idade dela: ");
+            System.out.println("digite o sexo da pessoa (h: homem/m:mulher): ");
+            String sexo;
+            System.out.println("digite a idade dessa pessoa: ");
             int idade = l.nextInt();
             soma += idade;
             if (i==0){
@@ -33,7 +34,13 @@ public class analistap {
                     mn = idade;
                     pmn = nome;
                 }
+                if(sexo == "h"){
+                    qtdh ++;
+                } else{
+                    qtdm++;
+                }
             }
         }
+        double med = soma / q;
     }
 }
