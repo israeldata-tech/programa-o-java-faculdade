@@ -12,7 +12,22 @@ public class estoquel {
         System.out.println("digite a quantidade em estoque: ");
         int q = s.nextInt();
         p.qtde=q;
-        
+
+        System.out.println("===== COMPRA =====");
+        System.out.println("digite quantos itens quer adicionar no estoque: ");
+        int qn = s.nextInt();
+        p.adde(qn);
+        System.out.println("digite quantos itens quer comprar: ");
+        int v = s.nextInt();
+        if (p.vender(v) == true){
+            System.out.println("temos em estoque");
+
+        } else{
+            System.out.println("não temos essa quantia em estoque");
+        }
+        p.ficha();
+        s.close();
+
 
     }
 }
