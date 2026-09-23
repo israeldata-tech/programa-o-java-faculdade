@@ -2,7 +2,26 @@ import java.util.Scanner;
 public class sistcontcarro {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        
+        carro c = new carro();
+        System.out.println("digite o modelo do carro: ");
+        String nome = s.nextLine();
+        c.modelo=nome;
+        System.out.println("digite a velocidade atual do veiculo: ");
+        double v = s.nextDouble();
+        c.vela=v;
+        System.out.println("digite o nivel de gasolina atual: ");
+        double g = s.nextDouble();
+        c.comb = g;
+        System.out.println();
+
+        System.out.println("digite quanto pretende acelerar: ");
+        double a = s.nextDouble();
+        c.acelerar(a);
+        System.out.println("digite quanto pretende abastecer: ");
+        double ab = s.nextDouble();
+        c.abastecer(ab);
+        c.exibir();
+        s.close();
     }
 }
 class carro{
