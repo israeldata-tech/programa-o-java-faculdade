@@ -16,7 +16,11 @@ public class sistcontcarro {
 
         System.out.println("digite quanto pretende acelerar: ");
         double a = s.nextDouble();
-        c.acelerar(a);
+        if (c.acelerar(a)){
+            System.out.println("velocidade aumentada!");
+        } else{
+            System.out.println("sem gasolina!");
+        }
         System.out.println("digite quanto pretende abastecer: ");
         double ab = s.nextDouble();
         c.abastecer(ab);
