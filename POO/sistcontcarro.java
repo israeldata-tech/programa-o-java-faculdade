@@ -24,6 +24,12 @@ public class sistcontcarro {
         System.out.println("digite quanto pretende abastecer: ");
         double ab = s.nextDouble();
         c.abastecer(ab);
+        if(c.acelerar(a)){
+            System.out.println("acelerando!");
+        }else{
+            System.out.println("sem gasolina!");
+        }
+        System.out.println();
         c.exibir();
         s.close();
     }
