@@ -10,5 +10,6 @@ public class idade {
         int d = s.nextInt();
         int dias = (i*365)+(m*30)+d;
         System.out.println("sua idade em dias é: "+dias);
+        s.close();
     }
 }
