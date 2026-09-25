@@ -28,6 +28,7 @@ public class imp {
         System.out.println("quantidade de peças 1: "+qtd1);
         System.out.println("quantidade de peças 2: "+qtd2);
         System.out.println("valor total a pagar: %.2f"+soma);
+        s.close();
         
 
     }
