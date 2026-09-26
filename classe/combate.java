@@ -33,10 +33,25 @@ public class combate {
         p2.qtdp=s.nextInt();
         System.out.println("QUAL A FORÇA DESSAS POÇÕES? ");
         p2.forçap=s.nextDouble();
-        System.out.println();
+        System.out.println("===== COMBATE INICIOU =====");
+        int i =1;
         while(p1.vida>0 && p2.vida>0){
             
+            System.out.println("TURNO "+i+" :");
+            p1.atacar(p2);
+            if(p2.vida<=0) break;
+            p1.usarpoção();
+            System.out.println();
+
+            
+            p2.atacar(p1);
+            if(p1.vida<=0)break;
+            p2.usarpoção();
+            
+            System.out.println("FIM DO TURNO "+i+"\n ");
+            i++;
         }
+        s.close();
     }
 }
 class personagem{
@@ -50,32 +65,32 @@ class personagem{
     public void receberataque(double ataque){
         
         vida-=ataque;
-        if(vida<0){
+        if(vida<=0){
             vida=0;
-            System.out.println(nome+" FOI DERROTADO!!!");
+            System.out.println(classe+" "+nome+" FOI DERROTADO!!!");
         }  
         if(vida>0){
-            System.out.println(nome+" RECEBEU "+ataque+" DE DANO!!!");
+            System.out.println(classe+" "+nome+" RECEBEU "+ataque+" DE DANO!!!");
         }
     }
-    public void guardarpoção(int q){
-        qtdp+=q;
-    }
+    
     public void usarpoção(){
-        if(vida>0){
-        if(qtdp>0){
+        if(vida>0 && qtdp>0){
+        if(vida>=vidam){
+                System.out.println(classe+" "+nome+" ESTÁ COM A VIDA CHEIA , NÃO É POSSIVEL USAR POÇÃO!!!");
+            }else{
             qtdp--;
             vida+=forçap;
-            System.out.println(nome+" USOU UMA POÇÃO E RECUPEROU SAÚDE, VIDA ATUAL: "+vida+" DE "+vidam);
             if(vida>vidam){
                 vida=vidam;
-                System.out.println(nome+" ESTÁ COM A VIDA CHEIA , NÃO É POSSIVEL USAR POÇÃO!!!");
             }
+            System.out.println(classe+" "+nome+" USOU UMA POÇÃO E RECUPEROU SAÚDE, VIDA ATUAL: "+vida+"/"+vidam);
             }
+            
         }
     }
-    public void atacar(String alvo){
-        System.out.println(nome+" ATACOU "+alvo+" causando um total de "+pa+" PONTOS DE DANO!!!");
-        receberataque(pa);
+    public void atacar(personagem alvo){
+        System.out.println(classe+" "+nome+" ATACOU "+alvo.classe+" "+alvo.nome+" causando um total de "+pa+" PONTOS DE DANO!!!");
+        alvo.receberataque(this.pa);
     }
 }
