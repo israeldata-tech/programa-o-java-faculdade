@@ -1,3 +1,4 @@
+// Autor: Francisco israel de almeida costa (2026003459)
 package arena;
 
 public class TesteEtapa2 {
@@ -9,6 +10,6 @@ public class TesteEtapa2 {
         System.out.println(thorin.status() + " armadura : " + thorin.getArmadura());
         System.out.println(merlin.status() + " mana : " + merlin.getMana());
         System.out.println(legolas.status() + " flechas : " + legolas.getFlechas());
-        System.out.println("Ataque do Merlin : " + merlin.getAtaque());
+        System.out.println("Ataque da Merlin : " + merlin.getAtaque());
     }
 }

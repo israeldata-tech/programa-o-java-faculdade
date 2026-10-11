@@ -1,8 +1,8 @@
+// Autor: Francisco israel de almeida costa (2026003459)
 package arena;
 
     public class Guerreiro extends Personagem {
     private int armadura;
-
     public Guerreiro(String nome, int vidam, int ataque, int defesa, int arm) {
         super(nome, vidam, ataque, defesa);
         this.armadura = arm;

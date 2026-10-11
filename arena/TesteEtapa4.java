@@ -1,3 +1,4 @@
+// Autor: Francisco israel de almeida costa (2026003459)
 package arena;
 
 public class TesteEtapa4 {
@@ -7,14 +8,14 @@ public class TesteEtapa4 {
         equipe[1] = new Mago("Merlin", 70, 12, 2, 30);
         equipe[2] = new Arqueiro("Legolas", 85, 13, 3, 2);
 
-        Personagem boneco = new Personagem("Boneco", 300, 0, 4);
+        Personagem doll = new Personagem("dolin", 300, 0, 4);
 
         for (int rodada = 1; rodada <= 4; rodada++) {
-            System.out.println(" --- Rodada " + rodada + " ---");
+            System.out.println("--- Turno " + rodada + " ---");
             for (Personagem p : equipe) {
-                p.atacar(boneco);
+                p.atacar(doll);
             }
-            System.out.println(boneco.status());
+            System.out.println(doll.status());
         }
     }
 }

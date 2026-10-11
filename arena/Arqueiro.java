@@ -1,8 +1,8 @@
+// Autor: Francisco israel de almeida costa (2026003459)
 package arena;
 
 public class Arqueiro extends Personagem {
     private int qtdf;
-
     public Arqueiro(String nome, int vidam, int ataque, int defesa, int f) {
         super(nome, vidam, ataque, defesa);
         this.qtdf = f;
@@ -18,16 +18,16 @@ public class Arqueiro extends Personagem {
             this.qtdf--;
             int força = getAtaque() + 5;
             int danor = alvo.receberDano(força);
-            System.out.println(getNome() + " dispara uma flecha em " + alvo.getNome() + " e causa " + danor + " de dano. (flechas: " + this.qtdf + ")");
+            System.out.println(getNome() + " dispara uma flecha em " + alvo.getNome() + " e causa " + danor + " pontos de dano. (flechas: " + this.qtdf + ")");
         } else {
             int força = getAtaque() / 2;
             int danor = alvo.receberDano(força);
-            System.out.println(getNome() + " está sem flechas e dá um soco em " + alvo.getNome() + ": " + danor + " de dano.");
+            System.out.println(getNome() + " está sem flechas e dá um soco em " + alvo.getNome() + ": " + danor + " pontos de dano.");
         }
     }
 
     public void recarregar() {
         this.qtdf += 3;
-        System.out.println(getNome() + " recolhe flechas do chão. (flechas: " + this.qtdf + ")");
+        System.out.println(getNome() + " recarrega munição. (flechas: " + this.qtdf + ")");
     }
 }
